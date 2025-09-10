@@ -79,125 +79,14 @@ This is a RESTful API for managing a simple todo list. It is built with Python u
     uvicorn main:app --reload
     ```
     The API will now be running on `http://127.0.0.1:8000`.
-
-### Environment Variables
-No environment variables are required to run this project.
-
-## API Documentation
-### Base URL
-`http://127.0.0.1:8000`
-
-### Endpoints
-#### GET /todos
-Retrieves a list of all todo items.
-
-**Request**:
-No payload required.
-
-**Response**: `200 OK`
-```json
-[
-  {
-    "id": 1,
-    "title": "Learn FastAPI",
-    "completed": false
-  },
-  {
-    "id": 2,
-    "title": "Build an API",
-    "completed": true
-  }
-]
-```
-
-**Errors**:
-- None
-
-#### POST /todos
-Creates a new todo item.
-
-**Request**: `201 Created`
-```json
-{
-  "title": "Document the API"
-}
-```
-
-**Response**:
-```json
-{
-  "id": 3,
-  "title": "Document the API",
-  "completed": false
-}
-```
-
-**Errors**:
-- `422 Unprocessable Entity`: If the `title` field is missing or not a string.
-
-#### GET /todos/{todo_id}
-Retrieves a single todo item by its ID.
-
-**Request**:
-Path parameter `todo_id` (integer).
-
-**Response**: `200 OK`
-```json
-{
-  "id": 1,
-  "title": "Learn FastAPI",
-  "completed": false
-}
-```
-
-**Errors**:
-- `404 Not Found`: If no todo item matches the provided `todo_id`.
-
-#### PATCH /todos/{todo_id}
-Updates an existing todo item's title or completion status.
-
-**Request**: `202 Accepted`
-Path parameter `todo_id` (integer).
-```json
-{
-  "title": "Learn advanced FastAPI",
-  "completed": true
-}
-```
-
-**Response**:
-```json
-{
-  "id": 1,
-  "title": "Learn advanced FastAPI",
-  "completed": true
-}
-```
-
-**Errors**:
-- `404 Not Found`: If no todo item matches the provided `todo_id`.
-- `422 Unprocessable Entity`: If the payload contains invalid data types.
-
-#### DELETE /todos/{todo_id}
-Deletes a todo item by its ID.
-
-**Request**: `204 No Content`
-Path parameter `todo_id` (integer).
-
-**Response**:
-An empty response with a `204 No Content` status code.
-
-**Errors**:
-- None (The operation is idempotent; deleting a non-existent item does not produce an error).
-
 ---
 
 ## Author
 
 Connect with me on social media!
 
--   **Twitter**: [@your_twitter_handle](https://twitter.com/your_twitter_handle)
--   **LinkedIn**: [your_linkedin_profile](https://linkedin.com/in/your_linkedin_profile)
+-   **Twitter**: [@struckchure](https://twitter.com/struckchure)
+-   **YouTube**: [Code With Struckchure](https://youtube.com/@codewithstruckchure)
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
